@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/401',[AuthController::class,'unautrorized'])->name('login');
+Route::get('/401',[AuthController::class,'unauthorized'])->name('login');
 
 Route::post('/auth/login',[AuthController::class,'login']);
 Route::post('/auth/register',[AuthController::class,'register']);
