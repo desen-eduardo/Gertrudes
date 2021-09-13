@@ -61,4 +61,34 @@ class AuthController extends Controller
 
         return $array;
     }
+
+    public function login(Request $request)
+    {
+        $array = ['error'=>''];
+
+        $validator = Validator::make($request->all(),[
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+
+        if ($validator->fails()) {
+            $array['error'] = $validator->errors()->first();
+            return $array;
+        }
+
+        $email = $request->input('email');
+        $password = $request->input('password');
+        
+        $token = Auth::attempt(['email' => $email, 'password' => $password]);
+
+        if (!$token) {
+            $array['error'] = 'E-mail ou/e senha invalido';
+            return $array;
+        }
+
+        $array['token'] = $token;
+        $array['user'] = auth::user();
+
+        return $array;
+    }
 }
