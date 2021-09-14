@@ -13,6 +13,7 @@ export default createGlobalStyle`
         font-family: 'Roboto', sans-serif;
     }
 
-    a{text-decoration:none}
-    ul{list-style:none}
+    a{text-decoration:none;}
+    ul{list-style:none;}
+    button{cursor:pointer;}
 `;
