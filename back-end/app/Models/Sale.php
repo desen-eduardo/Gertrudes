@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Item;
 
 class Sale extends Model
 {
@@ -15,7 +16,7 @@ class Sale extends Model
      * @var string[]
      */
     protected $fillable = [
-        'id_user',
+        'user_id',
         'pay'
     ];
 
@@ -28,4 +29,10 @@ class Sale extends Model
         'created_at',
         'updated_at'
     ];
+
+
+    public function items()
+    {
+        return $this->hasMany(Item::class);
+    }
 }
