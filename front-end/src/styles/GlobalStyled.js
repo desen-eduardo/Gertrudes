@@ -12,4 +12,7 @@ export default createGlobalStyle`
         background: #ccc;
         font-family: 'Roboto', sans-serif;
     }
+
+    a{text-decoration:none}
+    ul{list-style:none}
 `;

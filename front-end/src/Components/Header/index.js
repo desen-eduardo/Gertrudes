@@ -4,7 +4,7 @@ const Header = () => {
     return(
         <HeaderPage>
             <div className="container">
-                <h1>System Medicament</h1>
+                <h1>System Remedy</h1>
                 <div className="menu">
                     <ul>
                         <li><a href="#">Login</a></li>

@@ -14,6 +14,24 @@ export const HeaderPage = styled.div`
         align-items: center;
         color: #fff;
         justify-content: space-between;
-    
+
+        h1{
+            font: 1.1rem;
+            font-weight: 300;
+        }
+        
+        .menu ul{
+            display: flex;
+            li{
+                margin-left: 25px;
+                a{
+                    color:#fff;
+                    font-size: 1.0rem;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
     }
 `;
