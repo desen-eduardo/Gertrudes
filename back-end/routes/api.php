@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,8 @@ Route::middleware('auth:api')->group(function() {
 
     //Route of products
     Route::get('/products',[ProductController::class,'allProducts']);
+
+    //Route of sales
+    Route::post('/sales',[SaleController::class,'sales']);
+    Route::get('/last-sale',[SaleController::class,'lastSale']);
 });
