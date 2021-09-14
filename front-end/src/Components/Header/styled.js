@@ -24,6 +24,16 @@ export const HeaderPage = styled.div`
             display: flex;
             li{
                 margin-left: 25px;
+                .unlink{
+                    border: none;
+                    color: #fff;
+                    font-size: 1.0rem;
+                    background: none;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+
                 a{
                     color:#fff;
                     font-size: 1.0rem;
