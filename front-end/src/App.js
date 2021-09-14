@@ -1,8 +1,15 @@
-import './App.css';
+import {BrowserRouter} from 'react-router-dom';
+import Routes from './Routes';
+import GlobalStyled from './styles/GlobalStyled';
 
 function App() {
   return (
-    <h1>primeira aplicação</h1>
+    <>
+      <GlobalStyled />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </>
   );
 }
 
