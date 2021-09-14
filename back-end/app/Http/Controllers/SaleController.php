@@ -14,9 +14,9 @@ class SaleController extends Controller
     public function sales(Request $request)
     {
         $array = ['error'=>''];
-
         
-        return $request;
+        
+        return $request->input('name_product');
     }
 
     private function calculer(Request $request)
