@@ -62,6 +62,13 @@ class AuthController extends Controller
         return $array;
     }
 
+    public function validateToken()
+    {
+        $array = ['error'=>''];
+        $array['user'] = Auth::user();
+        return $array;
+    }
+
     public function login(Request $request)
     {
         $array = ['error'=>''];
@@ -78,7 +85,7 @@ class AuthController extends Controller
 
         $email = $request->input('email');
         $password = $request->input('password');
-        
+
         $token = Auth::attempt(['email' => $email, 'password' => $password]);
 
         if (!$token) {
@@ -89,6 +96,13 @@ class AuthController extends Controller
         $array['token'] = $token;
         $array['user'] = auth::user();
 
+        return $array;
+    }
+
+    public function logout()
+    {
+        $array = ['error'=>''];
+        Auth::logout();
         return $array;
     }
 }
