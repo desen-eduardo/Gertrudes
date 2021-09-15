@@ -57,9 +57,16 @@ const gertrudesAPI = {
             '/auth/login',
             {email,password}
         );
-
         return json;
-    }
+    },
+
+    register:async(name,email,phone,address_complement,password) => {
+        const json = await apiFetchPost(
+            '/auth/register',
+            {name,email,phone,address_complement,password}
+        );
+        return json;
+    },
 }
 
 export default () => gertrudesAPI;
