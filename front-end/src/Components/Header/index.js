@@ -6,6 +6,7 @@ import { isLogged,doLogout } from '../../helpers/authHandler';
 const Header = () => {
     let logged = isLogged();
 
+
     const handleLogout = () => {
         doLogout();
         window.location.href = '/login';
@@ -19,7 +20,7 @@ const Header = () => {
                     <ul>
                         {logged &&
                             <>
-                            <li>carrinho</li>
+                            <li><Link to="/carrinho">Meu Carrinho</Link></li>
                             <li><Link to="/">Produtos</Link></li>
                             <li><Link to="/historico">Histórico</Link></li>
                             <li><button className="unlink" onClick={handleLogout}>Sair</button></li>

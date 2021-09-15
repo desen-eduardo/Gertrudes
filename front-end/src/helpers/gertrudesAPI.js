@@ -72,8 +72,21 @@ const gertrudesAPI = {
         const json = await apiFetchGet(
             '/products'
         );
-
         return json.products;
+    },
+
+    getLastSale:async() => {
+        const json = await apiFetchGet(
+            '/last-sale'
+        );
+        return json.sales;
+    },
+
+    getPaySale:async() => {
+        const json = await apiFetchGet(
+            '/last-sale'
+        );
+        return json.pay;
     },
 }
 

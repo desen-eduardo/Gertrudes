@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect,useState} from 'react';
 import useApi from '../../helpers/gertrudesAPI';
 import {Main,Title} from './styled'; 
 
 const Home = () => {
     const api = useApi();
     const [listProducts,setListProducts] = useState([]);
-    const [amount,setAmount] = useState(1);
 
+    const handleAddProduct = () => {
+        
+    }
 
     useEffect(() => {
         const getProducts = async () => {
@@ -20,16 +22,16 @@ const Home = () => {
     return(
         <Main>
             <div className="area-container">
-                {listProducts.map((item,index) => {
+                {listProducts.map((item) => {
                     return (
-                        <div className="box-area" key={index}>
+                        <div className="box-area" key={item.id}>
                             <Title>{item.name_product}</Title>
                             <img src="./ilustrativa.jpg" alt="image ilustrativa" />
                             <div className="area-price">
-                                R$ {item.price}
+                                R$ {item.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}
                             </div>
                             <div className="area-add">
-                                <button>Adicionar</button>
+                                <button onClick={handleAddProduct}>Adicionar</button>
                             </div>    
                         </div> 
                     )
