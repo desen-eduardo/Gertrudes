@@ -19,8 +19,9 @@ const Header = () => {
                     <ul>
                         {logged &&
                             <>
+                            <li>carrinho</li>
                             <li><Link to="/">Produtos</Link></li>
-                            <li><button className="unlink">Última venda</button></li>
+                            <li><Link to="/historico">Histórico</Link></li>
                             <li><button className="unlink" onClick={handleLogout}>Sair</button></li>
                             </>
                         }

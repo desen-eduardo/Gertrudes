@@ -67,6 +67,14 @@ const gertrudesAPI = {
         );
         return json;
     },
+
+    getListProducts:async() => {
+        const json = await apiFetchGet(
+            '/products'
+        );
+
+        return json.products;
+    },
 }
 
 export default () => gertrudesAPI;

@@ -14,7 +14,8 @@ export const HeaderPage = styled.div`
         align-items: center;
         color: #fff;
         justify-content: space-between;
-
+        box-sizing: border-box;
+        padding: 0px 30px;
         h1{
             font: 1.1rem;
             font-weight: 300;

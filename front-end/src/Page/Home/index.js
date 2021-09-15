@@ -7,19 +7,6 @@ const Home = () => {
     const [listProducts,setListProducts] = useState([]);
     const [amount,setAmount] = useState(1);
 
-    const handlePlus = () => {
-        if (amount > 0) {
-            setAmount(amount+1);
-        }
-    }
-
-    const handleMinime = () => {
-        if (amount === 1) {
-            setAmount(1)
-        } else {
-            setAmount(amount - 1)
-        }
-    }
 
     useEffect(() => {
         const getProducts = async () => {
@@ -30,22 +17,23 @@ const Home = () => {
         getProducts();
     },[]);
 
-    console.log(listProducts)
     return(
         <Main>
             <div className="area-container">
-                <div className="box-area">
-                    <Title>Medicamento</Title>
-                    <img src="./ilustrativa.jpg" alt="image ilustrativa" />
-                    <div className="area-amount">
-                        <button onClick={handlePlus}>+</button>
-                        <input type="text" value={amount}/>
-                        <button onClick={handleMinime}>-</button>
-                    </div>
-                    <div className="area-add">
-                        <button>Adicionar</button>
-                    </div>    
-                </div>   
+                {listProducts.map((item,index) => {
+                    return (
+                        <div className="box-area" key={index}>
+                            <Title>{item.name_product}</Title>
+                            <img src="./ilustrativa.jpg" alt="image ilustrativa" />
+                            <div className="area-price">
+                                R$ {item.price}
+                            </div>
+                            <div className="area-add">
+                                <button>Adicionar</button>
+                            </div>    
+                        </div> 
+                    )
+                })}
             </div>
         </Main>
     );

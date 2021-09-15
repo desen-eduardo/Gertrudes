@@ -5,6 +5,7 @@ import Header from './Components/Header';
 import Login from './Page/Login';
 import Home from './Page/Home';
 import Register from "./Page/Register";
+import Historic from "./Page/Historic";
 
 export default () => {
     return(
@@ -13,6 +14,9 @@ export default () => {
             <Switch>
                 <Route exact path="/">
                     <Home />
+                </Route>
+                <Route exact path="/historico">
+                    <Historic />
                 </Route>
                 <Route exact path="/login">
                     <Login />
