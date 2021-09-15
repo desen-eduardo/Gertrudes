@@ -16,4 +16,5 @@ export default createGlobalStyle`
     a{text-decoration:none;}
     ul{list-style:none;}
     button{cursor:pointer;}
+    button:disabled{cursor:not-allowed;}
 `;
