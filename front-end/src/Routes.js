@@ -6,6 +6,7 @@ import Login from './Page/Login';
 import Home from './Page/Home';
 import Register from "./Page/Register";
 import Historic from "./Page/Historic";
+import Card from "./Page/Card";
 
 export default () => {
     return(
@@ -14,6 +15,9 @@ export default () => {
             <Switch>
                 <Route exact path="/">
                     <Home />
+                </Route>
+                <Route exact path="/carrinho">
+                    <Card />
                 </Route>
                 <Route exact path="/historico">
                     <Historic />
