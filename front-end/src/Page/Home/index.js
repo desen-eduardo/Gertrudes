@@ -22,10 +22,15 @@ const Home = () => {
         localStorage.setItem('products',JSON.stringify(products));
     }
 
+
     useEffect(() => {
         const getProducts = async () => {
             const list = await api.getListProducts();
-            setListProducts(list);
+            if (list.error === '') {
+                setListProducts(list);
+            } else {
+                window.location.href = '/login';
+            }
         }
 
         getProducts();
